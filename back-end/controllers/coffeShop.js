@@ -63,7 +63,6 @@ const controller = {
                 menu: req.body.menu,
             
             };
-            console.log(editedcoffeShop);
             if (editedcoffeShop.name || editedcoffeShop.adress || editedcoffeShop.atmosphere || editedcoffeShop.menu) {
                 let finalEdit = {};
                 for (let prop in editedcoffeShop) {

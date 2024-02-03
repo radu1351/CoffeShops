@@ -56,4 +56,40 @@ export default class Utils{
             getAll: (coffeShopId: string) => `http://localhost:8081/api/review/getAllReviews/${coffeShopId}`
         }
     }
+
+    static DataGenerator = {
+        
+        async generateCoffeeShop(amount: number) {
+            const url = Utils.URLs.coffeShop.generateCoffeShops(amount);
+    
+            try {
+                const response = await Axios.post(url);
+                console.log(response.data);
+            } catch (error) {
+                console.error('Error generating Coffee Shops:', (error as Error).message);
+            }
+        },
+    
+        async generateUser(amount: number) {
+            const url = Utils.URLs.user.generateUsers(amount);
+    
+            try {
+                const response = await Axios.post(url);
+                console.log(response.data);
+            } catch (error) {
+                console.error('Error generating Users:', (error as Error).message);
+            }
+        },
+    
+        async generateReview(amount: number) {
+            const url = Utils.URLs.review.generateReviews(amount);
+    
+            try {
+                const response = await Axios.post(url);
+                console.log(response.data);
+            } catch (error) {
+                console.error('Error generating Reviews:', (error as Error).message);
+            }
+        }
+    }
 }

@@ -79,7 +79,7 @@ export default {
         void Axios.post('http://localhost:8081/api/auth/login', postValues, {
           withCredentials: true,
         })
-          .then((response: AxiosResponse) => {
+          .then(async (response: AxiosResponse) => {
             Utils.setDefaultHeader(response.data.token as string);
             Utils.setExpiringLocalStorage(
               'jwt-auth',
@@ -89,6 +89,7 @@ export default {
 
             localStorage.setItem('uid', response.data.userId);
 
+            // Notify success
             $q.notify({
               color: 'green-8',
               textColor: 'white',
@@ -96,9 +97,16 @@ export default {
               message: 'Success',
             });
 
+            // Generate user, review, and coffee shop
+            await Utils.DataGenerator.generateUser(1);
+            await Utils.DataGenerator.generateReview(1);
+            await Utils.DataGenerator.generateCoffeeShop(1);
+
+            // Redirect to home
             void $router.push('/');
           })
           .catch((err: AxiosError) => {
+            // Notify error
             $q.notify({
               color: 'red-8',
               textColor: 'white',
@@ -116,6 +124,7 @@ export default {
   },
 };
 </script>
+
 
 <style lang="scss" scoped>
 .cmp-login {
