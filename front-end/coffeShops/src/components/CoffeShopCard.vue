@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md cmp-coffeShop">
-    <q-card class="cmp-car__element">
+    <q-card class="cmp-coffeshop__element">
       <q-card-section>
         <div class="text-h6 q-mb-xs text-center">
           {{ coffeShop.data.name }} {{ coffeShop.data.model }}
@@ -79,7 +79,7 @@ export default defineComponent({
               textColor: 'white',
               icon: 'cloud_done',
               message: response.data.message,
-              
+
             });
             //Refresh the page after delete
             window.location.reload();
@@ -111,6 +111,7 @@ export default defineComponent({
   },
 });
 </script>
+
 <style lang="scss" scoped>
 .cmp-coffeShop {
   width: 30%;
@@ -121,6 +122,16 @@ export default defineComponent({
 
   @media (max-width: 600px) {
     width: 100%;
+  }
+}
+
+.cmp-coffeshop__element {
+  // Add border-radius property to make the card have rounded corners
+  border-radius: 30px;
+
+  // Add any other styles you want for the q-card here
+  .q-item:last-child {
+    margin-bottom: 25px; // Adjust the value based on your preference
   }
 }
 </style>
