@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A coffeShop reviewing app",
   "productName": "CoffeShops Reviews",
-  "author": "Tuca Madalin",
+  "author": "Iancu Radu",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",

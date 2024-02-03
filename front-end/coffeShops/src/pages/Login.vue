@@ -9,7 +9,7 @@
       >
         <img
           class="cmp-login__container-form-img"
-          src="../../public/coffeShop-key.png"
+          src="../../public/coffeShop-cup.png"
           alt="Login image"
         />
         <h5>Login</h5>
