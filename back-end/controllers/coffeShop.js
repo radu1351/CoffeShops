@@ -71,9 +71,9 @@ const controller = {
                     }
                 }
                 await db.collection('coffeShops').doc(req.params.coffeShop_id).update(finalEdit);
-                res.status(200).send({ message: "coffeShop data updated" });
+                res.status(200).send({ message: "Coffe shop data updated." });
             } else {
-                res.status(400).send({ message: "You must provide at least one updated field" });
+                res.status(400).send({ message: "You must provide at least one updated field." });
             }
         } catch (err) {
             res.status(500).send({ message: `Server error: ${err}` });

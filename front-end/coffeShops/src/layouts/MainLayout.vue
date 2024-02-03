@@ -2,14 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title> Coffe Shops </q-toolbar-title>
       </q-toolbar>
@@ -19,16 +12,16 @@
       <q-list>
         <q-item-label header> Main Menu </q-item-label>
 
-        <q-item clickable exact to="/">
+        <q-item clickable exact to="/" active-class="selected-item">
           <q-item-section avatar>
-             <q-icon name="local_cafe" />
+            <q-icon name="local_cafe" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Coffe Shops</q-item-label>
           </q-item-section>
         </q-item>
 
-        <q-item v-show="!loggedIn" clickable exact to="/login">
+        <q-item v-show="!loggedIn" clickable exact to="/login" active-class="selected-item">
           <q-item-section avatar>
             <q-icon name="key" />
           </q-item-section>
@@ -37,7 +30,7 @@
           </q-item-section>
         </q-item>
 
-        <q-item v-show="!loggedIn" clickable exact to="/register">
+        <q-item v-show="!loggedIn" clickable exact to="/register" active-class="selected-item">
           <q-item-section avatar>
             <q-icon name="person_add" />
           </q-item-section>
@@ -46,7 +39,7 @@
           </q-item-section>
         </q-item>
 
-        <q-item v-show="loggedIn" clickable exact to="/account">
+        <q-item v-show="loggedIn" clickable exact to="/account" active-class="selected-item">
           <q-item-section avatar>
             <q-icon name="manage_accounts" />
           </q-item-section>
@@ -96,5 +89,12 @@ export default defineComponent({
 <style lang="scss" scoped>
 .q-toolbar {
   background-image: linear-gradient(to right, #774002, rgb(255, 115, 0));
+}
+</style>
+
+<style scoped>
+.selected-item .q-item__label,
+.selected-item .q-icon {
+  color: #FF8C00;
 }
 </style>
