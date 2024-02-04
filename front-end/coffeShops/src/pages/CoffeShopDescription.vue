@@ -66,8 +66,9 @@
       <div
         v-if="!this.isLoggedIn"
         class="cmp-specs__form-message q-mt-md flex flex-center"
+        style="color: red"
       >
-        Not authenticated
+        Not Authenticated. Please Login To Edit Coffee Shop.
       </div>
     </q-form>
   </div>
