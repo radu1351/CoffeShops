@@ -1,13 +1,13 @@
 <template>
   <div class="q-pa-md row items-start cmp-review">
     <q-card bordered class="cmp-review__card">
-      <q-card-section v-if="this.currentUser" class="cmp-review__card-section">
+      <q-card-section v-if="currentUser" class="cmp-review__card-section">
         <q-btn
           size="sm"
           round
           color="primary"
           icon="edit"
-          :disable="!this.isLoggedIn"
+          :disable="!isLoggedIn"
           @click="passDataToParent"
         />
         <q-btn
@@ -15,7 +15,7 @@
           round
           color="red-8"
           icon="delete_forever"
-          :disable="!this.isLoggedIn"
+          :disable="!isLoggedIn"
           @click="emitDeleteEvent"
         />
       </q-card-section>

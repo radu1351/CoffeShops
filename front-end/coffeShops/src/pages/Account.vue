@@ -24,7 +24,7 @@
               hint="Firstname"
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'Please type something',
+                (val:string) => (val && val.length > 0) || 'Please type something',
               ]"
             />
 
@@ -35,7 +35,7 @@
               hint="Lastname"
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'Please type something',
+                (val:string) => (val && val.length > 0) || 'Please type something',
               ]"
             />
 
@@ -46,12 +46,12 @@
               hint="Email"
               lazy-rules
               :rules="[
-                (val) => (val && val.length > 0) || 'Please type something',
+                (val:string) => (val && val.length > 0) || 'Please type something',
               ]"
             />
 
             <div>
-              <q-btn label="Submit data" type="submit" color="primary" />
+              <q-btn label="Submit Change" type="submit" color="primary" />
               <q-btn
                 label="Clear Data"
                 type="reset"

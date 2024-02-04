@@ -4,7 +4,7 @@
       <q-chip class="q-mt-md" text-color="white" color="primary" square style="font-size: 18px; font-weight: bold">
         {{ reviewedCoffeShop.name }} {{ reviewedCoffeShop.adress }}
       </q-chip>
-      <h5 v-if="!this.isLoggedIn" class="text-h5 text-weight-bold">
+      <h5 v-if="!isLoggedIn" class="text-h5 text-weight-bold">
         Login to add your review
       </h5>
       <h5 v-if="!isEditing && isLoggedIn" class="text-h5 text-weight-bold">
@@ -14,12 +14,12 @@
         Edit your review
       </h5>
       <div class="q-pa-md cmp-reviews__add-field">
-        <q-input :disable="!this.isLoggedIn" v-model="reviewMessage" filled type="textarea" />
-        <q-rating :disable="!this.isLoggedIn" class="q-mt-sm" size="24px" v-model="stars" :max="5" color="primary" />
+        <q-input :disable="!isLoggedIn" v-model="reviewMessage" filled type="textarea" />
+        <q-rating :disable="!isLoggedIn" class="q-mt-sm" size="24px" v-model="stars" :max="5" color="primary" />
       </div>
       <div class="q-pl-md q-pr-md q-mb-md cmp-reviews__add-actions">
-        <q-btn :disable="!this.isLoggedIn" round color="primary" icon="send" type="submit" @click="onSubmit" />
-        <q-btn :disable="!this.isLoggedIn" round color="red-8" icon="delete_forever" @click="onReset" />
+        <q-btn :disable="!isLoggedIn" round color="primary" icon="send" type="submit" @click="onSubmit" />
+        <q-btn :disable="!isLoggedIn" round color="red-8" icon="delete_forever" @click="onReset" />
       </div>
     </div>
     <q-separator inset />

@@ -19,7 +19,7 @@
           label="Your email *"
           hint="Email address.."
           lazy-rules
-          :rules="[(val) => (val && val.length > 0) || 'Please type something']"
+          :rules="[(val:string) => (val && val.length > 0) || 'Please type something']"
         />
 
         <q-input
@@ -30,7 +30,7 @@
           label="Your password *"
           lazy-rules
           :rules="[
-            (val) =>
+            (val:string) =>
               (val !== null && val !== '') || 'Please type your password',
           ]"
         />

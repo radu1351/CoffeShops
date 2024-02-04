@@ -34,7 +34,7 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable :disable="!this.isLoggedIn" @click="confirm">
+        <q-item clickable :disable="!isLoggedIn" @click="confirm">
           <q-item-section avatar>
             <q-icon color="red" name="delete_forever" />
           </q-item-section>

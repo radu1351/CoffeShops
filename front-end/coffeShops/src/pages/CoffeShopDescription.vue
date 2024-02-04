@@ -3,47 +3,47 @@
     <q-form @submit="onSubmit" @reset="onReset" class="q-pa-lg cmp-specs__form">
       <q-input
         filled
-        :disable="!this.isLoggedIn"
+        :disable="!isLoggedIn"
         v-model="name"
         label="Coffee Shop Name *"
         hint="Name of the coffee shop"
         lazy-rules
         class="q-mb-md"
-        :rules="[(val) => (val && val.length > 0) || 'Please type something']"
+        :rules="[(val:string) => (val && val.length > 0) || 'Please type something']"
       />
 
       <q-input
         filled
         class="q-mb-md"
-        :disable="!this.isLoggedIn"
+        :disable="!isLoggedIn"
         v-model="adress"
         label="Address *"
         hint="Adress of the coffee shop"
         lazy-rules
-        :rules="[(val) => (val !== null && val !== '') || 'Please type address']"
+        :rules="[(val:string) => (val !== null && val !== '') || 'Please type address']"
       />
 
       <q-input
         filled
         class="q-mb-md"
-        :disable="!this.isLoggedIn"
+        :disable="!isLoggedIn"
         v-model="atmosphere"
         label="Atmosphere *"
         hint="Cozy, Modern, etc."
         lazy-rules
-        :rules="[(val) => (val && val.length > 0) || 'Please type something']"
+        :rules="[(val:string) => (val && val.length > 0) || 'Please type something']"
       />
 
       <q-input
         filled
         class="q-mb-md"
-        :disable="!this.isLoggedIn"
+        :disable="!isLoggedIn"
         v-model="menu"
         label="Menu *"
         hint="Espresso, Latte, etc."
         lazy-rules
         :rules="[
-          (val) => (val !== null && val !== '') || 'Please add menu items',
+          (val:string) => (val !== null && val !== '') || 'Please add menu items',
         ]"
       />
 
@@ -52,10 +52,10 @@
           label="Submit"
           type="submit"
           color="primary"
-          :disable="!this.isLoggedIn"
+          :disable="!isLoggedIn"
         />
         <q-btn
-          :disable="!this.isLoggedIn"
+          :disable="!isLoggedIn"
           label="Reset"
           type="reset"
           color="primary"
@@ -64,7 +64,7 @@
         />
       </div>
       <div
-        v-if="!this.isLoggedIn"
+        v-if="!isLoggedIn"
         class="cmp-specs__form-message q-mt-md flex flex-center"
         style="color: red"
       >
