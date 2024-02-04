@@ -4,8 +4,8 @@
       <q-chip class="q-mt-md" text-color="white" color="primary" square style="font-size: 18px; font-weight: bold">
         {{ reviewedCoffeShop.name }} {{ reviewedCoffeShop.adress }}
       </q-chip>
-      <h5 v-if="!isLoggedIn" class="text-h5 text-weight-bold">
-        Login to add your review
+      <h5 v-if="!isLoggedIn" class="text-h5 text-weight-bold" style="color: red;">
+        Login To Add Your Review
       </h5>
       <h5 v-if="!isEditing && isLoggedIn" class="text-h5 text-weight-bold">
         Add your review
